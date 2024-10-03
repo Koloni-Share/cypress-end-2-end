@@ -30,6 +30,9 @@ export const selectors = {
             submitButton: '.MuiBox-root > .MuiButton-root',
             message: '.css-rktmqn > .MuiTypography-body1', 
         }
+    },
+    registration:{
+        
     }
 
 }
