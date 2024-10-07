@@ -1,8 +1,8 @@
 import { selectors } from "../support/selectors"
 
-import ApiCalls from "../e2e/api/helpers/api-calls"
+//import ApiCalls from "../e2e/api/helpers/api-calls"
 
-const apiCalls = new ApiCalls()
+//const apiCalls = new ApiCalls()
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -73,12 +73,24 @@ Cypress.Commands.add('postRequest', (endpoint, body, authToken, contentType, for
 });
 
 
-Cypress.Commands.add('getRequest', (endpoint) => {
-  return apiCalls.get(endpoint)
-})
+Cypress.Commands.add('getRequest', (endpoint, authToken) => {
+  const baseUrl = 'https://qa.api.koloni.io/v3/';
+  return cy.request({
+    method: 'GET',
+    url: `${baseUrl}${endpoint}`,
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    },
+    failOnStatusCode: false
+  });
+});
+
 
 Cypress.Commands.add('deleteRequest', (endpoint, body, authToken, contentType, form) => {
-  const requestBody = {
+  const baseUrl = 'https://qa.api.koloni.io/v3/';
+  return cy.request({
+    method: 'DELETE',
+    url: `${baseUrl}${endpoint}`,
     headers: {
       Authorization: `Bearer ${authToken}`,
       'Content-Type': contentType || 'application/json'
@@ -86,20 +98,35 @@ Cypress.Commands.add('deleteRequest', (endpoint, body, authToken, contentType, f
     form: form, 
     body: body,
     failOnStatusCode: false
-  };
-  return apiCalls.delete(endpoint, requestBody);})
+  });
+});
 
-Cypress.Commands.add('putRequest', (endpoint, body) => {
-  return apiCalls.put(endpoint, body)
-})
 
-Cypress.Commands.add('patchRequest', (endpoint, body, authToken, contentType) => {
-  const requestBody = {
-    body: body,
+Cypress.Commands.add('putRequest', (endpoint, body, authToken, contentType) => {
+  const baseUrl = 'https://qa.api.koloni.io/v3/';
+  return cy.request({
+    method: 'PUT',
+    url: `${baseUrl}${endpoint}`,
     headers: {
       Authorization: `Bearer ${authToken}`,
       'Content-Type': contentType || 'application/json'
-    }
-  };
-  return apiCalls.patch(endpoint, requestBody);
+    },
+    body: body,
+    failOnStatusCode: false
+  });
+});
+
+
+Cypress.Commands.add('patchRequest', (endpoint, body, authToken, contentType) => {
+  const baseUrl = 'https://qa.api.koloni.io/v3/';
+  return cy.request({
+    method: 'PATCH',
+    url: `${baseUrl}${endpoint}`,
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': contentType || 'application/json'
+    },
+    body: body,
+    failOnStatusCode: false
+  });
 });

@@ -81,7 +81,6 @@ describe('Reservations Test Suite', () => {
                     const deliveryCode = createDeliveryEventResponse.body.code
                     
                       eventsApiHelper.completeDeliveryEvent(token, deliveryCode).then((completeDeliveryResponse)=>{
-                      console.log(completeDeliveryResponse.body)
                        validator.http200Validations(completeDeliveryResponse)
                        const isValidSchema = validateSchema(patch_completeDeliveryEventSchema, completeDeliveryResponse.body)    
                        expect(isValidSchema,'Schema validation failed').to.be.true
