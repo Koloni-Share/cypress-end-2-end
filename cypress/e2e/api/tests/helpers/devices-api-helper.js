@@ -6,5 +6,12 @@ export class DevicesApiHelper {
     }
 
     //deleteDevice
+
+    deleteDeviceById(authToken, deviceId){
+      const body = {
+        deviceId
+      }
+      return cy.deleteRequest(`partner/devices`, authToken).as('deleteResponse')
+    }
   }
   

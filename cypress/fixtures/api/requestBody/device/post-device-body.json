@@ -1,0 +1,11 @@
+{
+    "name": "", 
+    "locker_number": 3, 
+    "mode": "delivery", 
+    "id_size": "", 
+    "id_location": "",
+    "status": "available",
+    "hardware_type": "linka",
+    "price_required":false,
+    "mac_address": "AA:BB:CC:DD:EE:FF"
+}

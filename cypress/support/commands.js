@@ -58,10 +58,7 @@ Cypress.Commands.add('loginByAPI', () => {
 /// <reference types="Cypress" />
 
 Cypress.Commands.add('postRequest', (endpoint, body, authToken, contentType, form) => {
-  const baseUrl = 'https://qa.api.koloni.io/v3/'; 
-
-  console.log("Auth Token en el command >> " +authToken)
-  
+  const baseUrl = 'https://qa.api.koloni.io/v3/';   
   return cy.request({
     method: 'POST',
     url: `${baseUrl}${endpoint}`,
@@ -80,14 +77,29 @@ Cypress.Commands.add('getRequest', (endpoint) => {
   return apiCalls.get(endpoint)
 })
 
-Cypress.Commands.add('deleteRequest', (endpoint) => {
-  return apiCalls.delete(endpoint)
-})
+Cypress.Commands.add('deleteRequest', (endpoint, body, authToken, contentType, form) => {
+  const requestBody = {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': contentType || 'application/json'
+    },
+    form: form, 
+    body: body,
+    failOnStatusCode: false
+  };
+  return apiCalls.delete(endpoint, requestBody);})
 
 Cypress.Commands.add('putRequest', (endpoint, body) => {
   return apiCalls.put(endpoint, body)
 })
 
-Cypress.Commands.add('patchRequest', (endpoint, body) => {
-  return apiCalls.patch(endpoint, body)
-})
+Cypress.Commands.add('patchRequest', (endpoint, body, authToken, contentType) => {
+  const requestBody = {
+    body: body,
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': contentType || 'application/json'
+    }
+  };
+  return apiCalls.patch(endpoint, requestBody);
+});

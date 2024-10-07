@@ -51,10 +51,8 @@ describe('Devices API Tests', () => {
     cy.get('@authToken').then((token) => {
       locationsApiHelper.createLocation(token, locationData).then((createlocationResponse)=>{
         const locationId = createlocationResponse.body.id
-        console.log(createlocationResponse.body.id)
         sizesApiHelper.createSize(token, sizeData).then((createSizeResponse)=>{
             const sizeId = createSizeResponse.body.id
-            console.log(createSizeResponse.body.id)
             deviceData.id_location = locationId
             deviceData.id_size = sizeId
             devicesApiHelper.createDevice(token, deviceData)

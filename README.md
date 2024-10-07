@@ -18,3 +18,9 @@ The tests in this repository cover the following key areas:
 -Run tests: npx cypress run to run all tests in headless mode. 
 -Open test runner: Use npx cypress open to launch the Cypress test runner interface. 
 
+
+
+TO-DO:
+npm install faker
+npm install ajv
+npm install ajv-formats

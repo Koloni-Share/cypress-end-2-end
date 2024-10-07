@@ -20,12 +20,11 @@ describe('Locations API Tests', () => {
         contact_phone: '+18337081205',
         contact_email: 'support@koloni.me',
         shared: false,
-        require_image: '' // Use empty string if no image is required
+        require_image: '' 
       };
 
       locationsApiHelper.createLocation(token, locationData).then((response) => {
-        console.log(response); // Log the response for debugging
-        expect(response.status).to.eq(201); // Adjust to the expected status code
+        expect(response.status).to.eq(201);
       });
     });
   });

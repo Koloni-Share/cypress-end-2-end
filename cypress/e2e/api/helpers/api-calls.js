@@ -59,6 +59,7 @@ export default class ApiCalls {
     return this.#sendRequest({
       apiRequestType: 'PATCH',
       endpoint: endpoint,
+      headers: body.headers || {},
       body: body,
       alias: 'patchResponse',
     });

@@ -20,7 +20,6 @@ describe('Sizes API Tests', () => {
     }
 
     sizesApiHelper.createSize(token, sizeData).then((response) => {
-        console.log(response);
         expect(response.status).to.eq(201);
       });
     });
