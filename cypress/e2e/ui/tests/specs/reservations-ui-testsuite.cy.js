@@ -11,6 +11,7 @@ import patch_completeDeliveryEventSchema from '../../../../fixtures/api/response
 import deviceData from '../../../../fixtures/api/requestBody/device/post-device-body.json'
 import locationData from '../../../../fixtures/api/requestBody/location/post-location-body.json'
 import sizeData from '../../../../fixtures/api/requestBody/size/post-size-body.json'
+import { LoginPage } from '../pages/login-page';
 
 const locationsApiHelper = new LocationsApiHelper()
 const sizesApiHelper = new SizesApiHelper()
@@ -18,15 +19,15 @@ const devicesApiHelper = new DevicesApiHelper()
 const eventsApiHelper = new EventsApiHelper()
 const validator = new StatusCodeValidator()
 const reservationPage = new ReservationsPage()
+const loginPage = new LoginPage()
 
 describe('Reservations Test Suite', () => {
     beforeEach(() => {
         cy.clearAllCookies()
         cy.clearLocalStorage()
-        cy.visit("https://joseorg.koloni.io")
+        cy.visit(Cypress.env('baseUrl'))
         cy.loginByAPI(); 
     })
-
 
     it('should successfully create a new reservation, create a delivery and complete the event', () => {
         cy.get('@authToken').then((token) => {
@@ -44,21 +45,14 @@ describe('Reservations Test Suite', () => {
                 const sizeId = createSizeResponse.body.id                                    
                 deviceData.id_location = locationId
                 deviceData.id_size = sizeId
-              devicesApiHelper.createDevice(token, deviceData).then((createDeviceResponse)=>{               
-                const deviceId = createDeviceResponse.body.id
+              devicesApiHelper.createDevice(token, deviceData).then(()=>{               
                 const reservationData = {
                   trackingNumber: `AUTO-${faker.string.alphanumeric(4).toUpperCase()}` 
                 }
 
-                //TO-DO: create login-page.js and UI login steps this code to it
-                cy.get('#\\:r1\\:').type('helpdesk@koloni.me')
-                cy.get('#\\:r2\\:').type('c3kUt9d@upWBraT97n2jc')
-                cy.get('.MuiButton-root').click()
-                cy.get(".css-1dzfugc").click()
-                cy.contains('Events').click()
-                cy.contains('Reservations').click()
-                cy.contains('Add Reservation').click()
-
+              
+                loginPage.login(Cypress.env('username'), Cypress.env('password'))
+                
                 reservationPage.createNewRegistration({
                   trackingNumber: reservationData.trackingNumber,
                   locationName: locationName,
