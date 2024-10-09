@@ -7,8 +7,6 @@ export class DevicesApiHelper {
       return cy.postRequest(this.endpoint, DeviceData, authToken, 'application/json', true).as('createLocation');
     }
 
-    //deleteDevice
-
     deleteDeviceById(authToken, deviceId){
       const body = {
         deviceId

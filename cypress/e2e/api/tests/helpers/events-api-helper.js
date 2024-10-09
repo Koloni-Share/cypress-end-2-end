@@ -1,5 +1,4 @@
 export class EventsApiHelper {
-  // Define la propiedad como una variable de clase
   endpoint = 'partner/events/';
 
   createDeliveryEvent(authToken, eventData) {

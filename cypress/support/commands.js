@@ -1,8 +1,5 @@
 import { selectors } from "../support/selectors"
 
-//import ApiCalls from "../e2e/api/helpers/api-calls"
-
-//const apiCalls = new ApiCalls()
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
