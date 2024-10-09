@@ -33,7 +33,7 @@ export const selectors = {
     },
     reservations:{
         addNewReservationForm:{
-            modeDropdown:"[id='mui-component-select-mode']",
+            modeDropdown:'[id="reservation_form_delivery_select_mode"]',
             deliveryOption: '[data-value="delivery"]',
             trackingNumberInput: 'input[placeholder="Enter tracking number here"]',
             locationDropdown: 'input[placeholder="Select a location"]',
@@ -41,6 +41,16 @@ export const selectors = {
             phoneNumberInput: 'input[placeholder="Enter phone number here"]',
             sizeDropdown: '#mui-component-select-id_size',
             submitButton: 'Submit' 
+        }
+    },
+    locations:{
+        addLocationButton:"[name='addLocation']",
+        addnewLocationform:{
+            nameInput:'input[placeholder="Name"]',
+            addressInput:'input[name="address"]',
+            CustomerSupportAddNewRadioButon:'.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',
+            emailInput:'input[placeholder="user@domain.com"]',
+            phoneNumberInput:'input[placeholder="+12345678900"]'
         }
     }
 

@@ -10,6 +10,7 @@ import post_deliveryParcelSchema from '../../../../fixtures/api/responseSchemas/
 import patch_completeDeliveryEventSchema from '../../../../fixtures/api/responseSchemas/events/patch_completeDeliveryEvent.json'
 import { LoginPage } from '../pages/login-page';
 import { sizeData, locationData, deviceData } from '../../../../support/data.cy.js';
+import { NavigationMenu } from '../pages/navigation-menu.js';
 
 
 const locationsApiHelper = new LocationsApiHelper()
@@ -19,6 +20,7 @@ const eventsApiHelper = new EventsApiHelper()
 const validator = new StatusCodeValidator()
 const reservationPage = new ReservationsPage()
 const loginPage = new LoginPage()
+const navigationMenu = new NavigationMenu()
 
 describe('Reservations Test Suite', () => {
     beforeEach(() => {
@@ -49,8 +51,9 @@ describe('Reservations Test Suite', () => {
                   trackingNumber: `AUTO-${faker.string.alphanumeric(4).toUpperCase()}` 
                 }
 
-              
                 loginPage.login(Cypress.env('username'), Cypress.env('password'))
+                navigationMenu.navigateToReservations()
+                cy.contains('Add Reservation').click()
                 
                 reservationPage.createNewRegistration({
                   trackingNumber: reservationData.trackingNumber,
