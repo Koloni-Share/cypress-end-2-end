@@ -8,10 +8,9 @@ import { validateSchema } from '../../../api/helpers/schemaValidator'
 import { ReservationsPage } from '../pages/reservations-page';
 import post_deliveryParcelSchema from '../../../../fixtures/api/responseSchemas/events/post_deliveryParcel.json'
 import patch_completeDeliveryEventSchema from '../../../../fixtures/api/responseSchemas/events/patch_completeDeliveryEvent.json'
-import deviceData from '../../../../fixtures/api/requestBody/device/post-device-body.json'
-import locationData from '../../../../fixtures/api/requestBody/location/post-location-body.json'
-import sizeData from '../../../../fixtures/api/requestBody/size/post-size-body.json'
 import { LoginPage } from '../pages/login-page';
+import { sizeData, locationData, deviceData } from '../../../../support/data.cy.js';
+
 
 const locationsApiHelper = new LocationsApiHelper()
 const sizesApiHelper = new SizesApiHelper()
@@ -36,7 +35,7 @@ describe('Reservations Test Suite', () => {
       sizeData.name = `Size-${faker.string.alphanumeric(SUFFIX_LENGTH).toUpperCase()}`
       locationData.name = `Location-${faker.string.alphanumeric(SUFFIX_LENGTH).toUpperCase()}`
       deviceData.name = `Device-${faker.string.alphanumeric(SUFFIX_LENGTH).toUpperCase()}`
-      
+   
             locationsApiHelper.createLocation(token, locationData).then((createlocationResponse)=>{
               const locationId = createlocationResponse.body.id
               const locationName = createlocationResponse.body.name
@@ -75,6 +74,7 @@ describe('Reservations Test Suite', () => {
                     const deliveryCode = createDeliveryEventResponse.body.code
                     
                       eventsApiHelper.completeDeliveryEvent(token, deliveryCode).then((completeDeliveryResponse)=>{
+
                        validator.http200Validations(completeDeliveryResponse)
                        const isValidSchema = validateSchema(patch_completeDeliveryEventSchema, completeDeliveryResponse.body)    
                        expect(isValidSchema,'Schema validation failed').to.be.true
@@ -83,13 +83,13 @@ describe('Reservations Test Suite', () => {
                 }).then(()=>{
                   /*
                   TO-DO: DELETE created data to avoid creating too many instances in the database.
-                  Currently getting an error when trying to delete a device (device still referenced by a reservation in the DB)
+                  Currently getting an error when trying to delete a device (device still referenced by a transaction in the DB)
                   */
                   //devicesApiHelper.deleteDeviceById(token, deviceId)
                 })  
                 })             
               })
             })  
-          });
+          })
     })
 })

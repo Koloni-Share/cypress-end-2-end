@@ -1,8 +1,10 @@
 /// <reference types="Cypress" />
 
 export class DevicesApiHelper {
+  endpoint = 'partner/devices';
+
     createDevice(authToken, DeviceData) {
-      return cy.postRequest('partner/devices', DeviceData, authToken, 'application/json', true).as('createLocation');
+      return cy.postRequest(this.endpoint, DeviceData, authToken, 'application/json', true).as('createLocation');
     }
 
     //deleteDevice
@@ -11,7 +13,7 @@ export class DevicesApiHelper {
       const body = {
         deviceId
       }
-      return cy.deleteRequest(`partner/devices`, authToken).as('deleteResponse')
+      return cy.deleteRequest(this.endpoint, authToken).as('deleteResponse')
     }
   }
   

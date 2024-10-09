@@ -1,4 +1,5 @@
 import { SizesApiHelper } from "../helpers/sizes-api-helper";
+import { sizeData } from '../../support/data.cy.js';
 
 const sizesApiHelper = new SizesApiHelper()
 
@@ -8,17 +9,8 @@ describe('Sizes API Tests', () => {
     cy.loginByAPI(); 
   });
 
-  it.only('Should create a new size', function () {
+  it('Should create a new size', function () {
     cy.get('@authToken').then((token) => {
-      const sizeData = 
-      {
-        name: "Medium", 
-        description: "Test", 
-        width: "5", 
-        depth: "5", 
-        height: "5"
-    }
-
     sizesApiHelper.createSize(token, sizeData).then((response) => {
         expect(response.status).to.eq(201);
       });

@@ -44,8 +44,8 @@ Cypress.Commands.add('loginByAPI', () => {
     body: {
       username: 'jose@koloni.me',
       password: '123Test!',
-      user_pool_id: 'us-east-1_TzJHzebgk',
-      client_id: '6k8s8t7kbhurg4trdak4rvmghi'
+      user_pool_id: 'us-east-1_I01JXA4Ok',
+      client_id: '2nt59ti9o33b3f23s60aan8brs'
     }
   }).then((response) => {
     expect(response.status).to.eq(200); 

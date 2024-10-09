@@ -109,52 +109,11 @@
             "address": {
               "type": "string"
             },
-            "hidden": {
-              "type": "boolean"
-            },
-            "shared": {
-              "type": "boolean"
-            },
             "latitude": {
               "type": "number"
             },
             "longitude": {
               "type": "number"
-            },
-            "contact_email": {
-              "type": "string",
-              "format": "email"
-            },
-            "contact_phone": {
-              "type": "string",
-              "pattern": "^\\+\\d{11,15}$"
-            },
-            "restrict_by_user_code": {
-              "type": "boolean"
-            },
-            "verify_pin_code": {
-              "type": "boolean"
-            },
-            "verify_qr_code": {
-              "type": "boolean"
-            },
-            "verify_url": {
-              "type": "boolean"
-            },
-            "email": {
-              "type": "boolean"
-            },
-            "phone": {
-              "type": "boolean"
-            },
-            "available_devices": {
-              "type": "integer"
-            },
-            "reserved_devices": {
-              "type": "integer"
-            },
-            "maintenance_devices": {
-              "type": "integer"
             }
           },
           "required": ["id", "created_at", "name", "address", "latitude", "longitude"]
@@ -171,9 +130,6 @@
               "format": "date-time"
             },
             "name": {
-              "type": "string"
-            },
-            "description": {
               "type": "string"
             },
             "width": {
@@ -217,26 +173,12 @@
           "type": "string",
           "pattern": "^\\d{10,15}$"
         },
-        "email": {
-          "type": "string",
-          "format": "email"
-        },
         "active": {
           "type": "boolean"
-        },
-        "user_id": {
-          "type": "string"
-        },
-        "pin_code": {
-          "type": "string",
-          "pattern": "^\\d{4}$"
         },
         "access_code": {
           "type": "string",
           "pattern": "^\\d{6}$"
-        },
-        "address": {
-          "type": "string"
         },
         "require_auth": {
           "type": "boolean"
@@ -246,7 +188,7 @@
           "items": {}
         }
       },
-      "required": ["id", "created_at", "name", "phone_number", "email", "active", "user_id", "pin_code", "access_code"]
+      "required": ["id", "created_at", "name", "phone_number", "active", "access_code"]
     }
   },
   "required": ["id", "invoice_id", "order_id", "code", "created_at", "started_at", "event_status", "event_type", "refunded_amount", "id_user", "id_device", "device", "user"]
