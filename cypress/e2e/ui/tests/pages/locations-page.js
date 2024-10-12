@@ -9,8 +9,8 @@ export class LocationsPage {
         cy.get(selectors.locations.addnewLocationform.nameInput).type(locationName)
         cy.get(selectors.locations.addnewLocationform.addressInput).type(locationAddress).type('{enter}')
         cy.get(selectors.locations.addnewLocationform.CustomerSupportAddNewRadioButon).click()
-        cy.get(selectors.locations.addnewLocationform.emailInput).type(locationEmail);
-        cy.get(selectors.locations.addnewLocationform.phoneNumberInput).type(locationPhone);
+        cy.get(selectors.locations.addnewLocationform.emailInput).type(locationEmail)
+        cy.get(selectors.locations.addnewLocationform.phoneNumberInput).type(locationPhone)
         cy.contains('Submit').click()
     }
 }

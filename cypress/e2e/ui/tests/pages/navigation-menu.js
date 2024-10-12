@@ -10,7 +10,7 @@ export class NavigationMenu {
 
     navigateToLocations() {
         cy.contains('Places').click({ force: true })
-        cy.get(':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click({ force: true })
+        cy.get(selectors.navigationMenu.locationsMenuItem).click({ force: true })
        
     }
 }

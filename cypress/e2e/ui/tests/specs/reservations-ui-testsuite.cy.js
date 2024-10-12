@@ -9,7 +9,7 @@ import { ReservationsPage } from '../pages/reservations-page';
 import post_deliveryParcelSchema from '../../../../fixtures/api/responseSchemas/events/post_deliveryParcel.json'
 import patch_completeDeliveryEventSchema from '../../../../fixtures/api/responseSchemas/events/patch_completeDeliveryEvent.json'
 import { LoginPage } from '../pages/login-page';
-import { sizeData, locationData, deviceData } from '../../../../support/data.cy.js';
+import { sizeData, locationData, deviceData, reservationData } from '../../../../support/data.cy.js';
 import { NavigationMenu } from '../pages/navigation-menu.js';
 
 
@@ -47,9 +47,8 @@ describe('Reservations Test Suite', () => {
                 deviceData.id_location = locationId
                 deviceData.id_size = sizeId
               devicesApiHelper.createDevice(token, deviceData).then(()=>{               
-                const reservationData = {
-                  trackingNumber: `AUTO-${faker.string.alphanumeric(4).toUpperCase()}` 
-                }
+                
+                reservationData.trackingNumber = `AUTO-${faker.string.alphanumeric(4).toUpperCase()}` 
 
                 loginPage.login(Cypress.env('username'), Cypress.env('password'))
                 navigationMenu.navigateToReservations()
@@ -58,7 +57,9 @@ describe('Reservations Test Suite', () => {
                 reservationPage.createNewRegistration({
                   trackingNumber: reservationData.trackingNumber,
                   locationName: locationName,
-                  sizeName: sizeName
+                  sizeName: sizeName,
+                  userName: reservationData.username,
+                  phoneNumber: reservationData.contact_phone
               });                
                 //Assertions:
                 cy.contains('h2', 'Success').should('be.visible')        

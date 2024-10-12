@@ -22,7 +22,7 @@ export const deviceData =
 
 export const locationData = 
 {
-name: 'New13',
+name: '',
 address: 'San José Province, San José, Costa Rica',
 hidden: false,
 latitude: 9.9280694,
@@ -31,4 +31,12 @@ contact_phone: '+18337081205',
 contact_email: 'support@koloni.me',
 shared: false,
 require_image: '' 
-};
+}
+
+export const reservationData = 
+{
+username: 'TestUser',
+contact_phone: '18337081205',
+trackingNumber: ''
+}
+

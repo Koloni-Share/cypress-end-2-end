@@ -11,10 +11,10 @@ const loginPage = new LoginPage()
 const navigationMenu = new NavigationMenu()
 describe('Reservations Test Suite', () => {
     beforeEach(() => {
-        cy.clearAllCookies();
-        cy.clearLocalStorage();
-        cy.visit(Cypress.env('baseUrl'));
-        cy.loginByAPI(); 
+        cy.clearAllCookies()
+        cy.clearLocalStorage()
+        cy.visit(Cypress.env('baseUrl'))
+        cy.loginByAPI() 
     });
 
     it('should successfully create a new location', () => {
