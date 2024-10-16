@@ -11,7 +11,7 @@ export const selectors = {
 
     },
     navigationMenu: {
-        
+        locationsMenuItem: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root'
     },
     users: {
         SignInButton: '.css-1dzfugc',
@@ -33,14 +33,24 @@ export const selectors = {
     },
     reservations:{
         addNewReservationForm:{
-            modeDropdown:"[id='mui-component-select-mode']",
+            modeDropdown:'#reservation_form_delivery_select_mode',
             deliveryOption: '[data-value="delivery"]',
-            trackingNumberInput: 'input[placeholder="Enter tracking number here"]',
-            locationDropdown: 'input[placeholder="Select a location"]',
-            usernameInput: 'input[placeholder="Enter user name here"]',
-            phoneNumberInput: 'input[placeholder="Enter phone number here"]',
-            sizeDropdown: '#mui-component-select-id_size',
+            trackingNumberInput: '#reservation_form_delivery_input_tracking_number',
+            locationDropdown: '#reservation_form_delivery_select_location',
+            usernameInput: '#reservation_form_delivery_input_user_name',
+            phoneNumberInput: '#reservation_form_delivery_input_phone_number',
+            sizeDropdown: '#reservation_form_delivery_select_size',
             submitButton: 'Submit' 
+        }
+    },
+    locations:{
+        addLocationButton:"[name='addLocation']",
+        addnewLocationform:{
+            nameInput:'input[placeholder="Name"]',
+            addressInput:'input[name="address"]',
+            CustomerSupportAddNewRadioButon:'.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',
+            emailInput:'input[placeholder="user@domain.com"]',
+            phoneNumberInput:'input[placeholder="+12345678900"]'
         }
     }
 
