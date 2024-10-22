@@ -28,6 +28,8 @@ describe('Test Add User', () => {
     cy.get(selectors.usersMenu.pinCodeField).eq(`5`).type(texts.users.pinCode)
     cy.get(selectors.usersMenu.submitButton).click()
     cy.get(selectors.usersMenu.okSuccessButton).eq('4').click()
+    cy.get(selectors.users.usersList).contains(texts.users.email)
+    
   }),
 
   it('Can Delete a User', () => {
@@ -36,5 +38,6 @@ describe('Test Add User', () => {
     cy.get(selectors.usersMenu.confirmDeleteButton).eq('0').click()
     cy.wait(1000)
     cy.get(selectors.usersMenu.okDeletedButton).eq('4').click({ force: true })
+    cy.get(selectors.users.usersList).contains(texts.users.email).should('not.exist')
   })
 })

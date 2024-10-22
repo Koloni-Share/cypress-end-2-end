@@ -16,8 +16,8 @@ export const selectors = {
     reservationsMenu: {
         addReservationButton: '.MuiGrid-root > :nth-child(1)', 
 
-         bulkUploadtab: '.MuiTab-root'
-         okErrorbutton: '.MuiLoadingButton-root'
+         bulkUploadtab: '.MuiTab-root' , 
+         okErrorbutton: '.MuiLoadingButton-root' , 
 
 
     },
@@ -36,12 +36,13 @@ export const selectors = {
         confirmDeleteButton: '.MuiBox-root > .MuiButton-containedPrimary',
         okDeletedButton: '.MuiButton-root',
         userForm: '.MuiTabPanel-root form'
-
+    
     },
 
 
 
     users: {
+        usersList: '.MuiPaper-elevation1.MuiCard-root',
         SignInButton: '.css-1dzfugc',
         PeopleTab: ':nth-child(6) > .MuiListItemText-root > .MuiTypography-root',
         UsersTab: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root',
