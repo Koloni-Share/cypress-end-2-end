@@ -1,18 +1,36 @@
 export const selectors = {
     login: {
         usernameTextbox: '#\\:r1\\:',
-        passwordTextbox: '#\\:r2\\:',
+        passwordTextbox: '#\\:r2\\:', 
         loginButton: '.MuiButton-root'
     },
     mainPage: {
         mainHeader: '.MuiToolbar-root', 
-        menuOptions: '.css-1dzfugc'
-
+        menuOptions: '.css-1dzfugc' ,
+        peopleTab: 'ul.MuiList-root > :nth-child(6)' ,
+        usersTab: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root' ,
+        eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)'
+    },
+    usersMenu: {
+     addUserButton: '.MuiButton-root' , 
+     nameField: '.MuiOutlinedInput-input' , 
+     phoneNumberField: '.MuiOutlinedInput-input' , 
+     emailField: '.MuiOutlinedInput-input' , 
+     addressField: '.MuiOutlinedInput-input' ,
+     userIdField: '.MuiOutlinedInput-input' , 
+     pinCodeField: '.MuiOutlinedInput-input' , 
+     submitButton: '.MuiLoadingButton-root' , 
+     okSuccessButton: '.MuiButton-root' , 
+     userCheckBox: '.MuiTableBody-root > :nth-child(1) > :nth-child(1) > .MuiCheckbox-root > .PrivateSwitchBase-input' , 
+     deleteButton: '.css-1t62lt9 > :nth-child(2)' , 
+     confirmDeleteButton: '.MuiBox-root > .MuiButton-containedPrimary' , 
+     okDeletedButton: '.MuiButton-root' , 
+     userForm: '.MuiTabPanel-root form'
 
     },
-    navigationMenu: {
-        
-    },
+
+
+
     users: {
         SignInButton: '.css-1dzfugc',
         PeopleTab: ':nth-child(6) > .MuiListItemText-root > .MuiTypography-root',
