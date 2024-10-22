@@ -10,21 +10,21 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 
-describe('Test Add Price', () => {
-  // it 
-  it('Add Princing', () => {
+describe('Test Bulk Upload', () => {
+  
+  it('Can Bulk Upload', () => {
 
     cy.visit('https://qa-org.koloni.io/')
-    cy.get('#\\:r1\\:').type('helpdesk@koloni.me')
-    cy.get('#\\:r2\\:').type('c3kUt9d@upWBraT97n2jc')
-    cy.get('.MuiButton-root').click()
-    cy.get('.css-1dzfugc').click()
-    cy.get('.MuiList-padding > :nth-child(7) > :nth-child(3)').click()
-    cy.get(':nth-child(2) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root').click()
-    cy.get('.MuiGrid-root > :nth-child(1)').click()
-    cy.get('.MuiTab-root').eq(`1`).click({ force: true })
+    cy.get(selectors.login.usernameTextbox).type(texts.login.username)
+    cy.get(selectors.login.passwordTextbox).type(texts.login.password)
+    cy.get(selectors.login.loginButton).click()
+    cy.get(selectors.mainPage.menuOptions).click()
+    cy.get(selectors.mainPage.eventsTab).click()
+    cy.get(selectors.mainPage.reservationsTab).click()
+    cy.get(selectors.reservationsMenu.addReservationButton).click()
+    cy.get(selectors.reservationsMenu.bulkUploadtab).eq(`1`).click({ force: true })
     cy.log(' test', cy.get('input[type="file"]'))
-    cy.fixture('KoloniCSVtemplate.csv')
+    cy.fixture('CSVBulkUpload.csv')
       .then(fileContent => {
         cy.get('input[type="file"]')
           .attachFile({
@@ -33,7 +33,7 @@ describe('Test Add Price', () => {
             mimeType: 'text/csv',
           });
       })
-    cy.get('.MuiLoadingButton-root').click()
+    cy.get(selectors.reservationsMenu.okErrorbutton).click()
   })
 })
 

@@ -1,4 +1,5 @@
 import { selectors } from "../support/selectors"
+import { texts } from "../support/texts"
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -18,6 +19,33 @@ import { selectors } from "../support/selectors"
     cy.get(selectors.users.addUserButton).contains('Add User');
   })
 //
+
+// -- This is a command to log in --
+Cypress.Commands.add('loginToApp', () => { 
+  cy.visit(texts.urls.main)
+  cy.get(selectors.login.usernameTextbox).type(texts.login.username)
+  cy.get(selectors.login.passwordTextbox).type(texts.login.password)
+  cy.get(selectors.login.loginButton).click()
+})
+//
+
+// -- This is a command to log in --
+Cypress.Commands.add('navigateToUser', () => { 
+  cy.get(selectors.mainPage.menuOptions).click()
+cy.get(selectors.mainPage.peopleTab).click()
+cy.get(selectors.mainPage.usersTab).click({force:true})
+})
+//
+
+
+// -- This is a command to fill user in --
+Cypress.Commands.add('fillUserForm', () => { 
+  cy.get(selectors.mainPage.menuOptions).click()
+cy.get(selectors.mainPage.peopleTab).click()
+cy.get(selectors.mainPage.usersTab).click({force:true})
+})
+//
+
 
 
 // -- This is a child command --
