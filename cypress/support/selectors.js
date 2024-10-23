@@ -39,8 +39,6 @@ export const selectors = {
     
     },
 
-
-
     users: {
         usersList: '.MuiPaper-elevation1.MuiCard-root',
         SignInButton: '.css-1dzfugc',
@@ -70,6 +68,16 @@ export const selectors = {
             phoneNumberInput: 'input[placeholder="Enter phone number here"]',
             sizeDropdown: '#mui-component-select-id_size',
             submitButton: 'Submit'
+        }
+    },
+    locations:{
+        addLocationButton:"[name='addLocation']",
+        addnewLocationform:{
+            nameInput:'input[placeholder="Name"]',
+            addressInput:'input[name="address"]',
+            CustomerSupportAddNewRadioButon:'.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',
+            emailInput:'input[placeholder="user@domain.com"]',
+            phoneNumberInput:'input[placeholder="+12345678900"]'
         }
     }
 

@@ -3,7 +3,7 @@
 export class SizesApiHelper {
   endpoint = 'partner/sizes'
     createSize(authToken, sizeData) {
-        return cy.postRequest(this.endpoint, sizeData, authToken).as('createSize');
+        return cy.postRequest(this.endpoint, sizeData, authToken).as('createSize')
       }
 
     getSizes(authToken){

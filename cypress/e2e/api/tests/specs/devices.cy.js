@@ -10,8 +10,8 @@ const sizesApiHelper = new SizesApiHelper()
 describe('Devices API Tests', () => {
 
   before(() => {
-    cy.loginByAPI(); 
-  });
+    cy.loginByAPI() 
+  })
 
   it('Should create a new device', function () {
     cy.get('@authToken').then((token) => {
@@ -24,6 +24,6 @@ describe('Devices API Tests', () => {
             devicesApiHelper.createDevice(token, deviceData)
         })
       })  
-    });
-  });
-});
+    })
+  })
+})
