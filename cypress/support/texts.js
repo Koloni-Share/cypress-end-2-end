@@ -3,11 +3,31 @@ export const texts = {
         dashboardText: "Dashboard",
         title: 'Texto del title'
     },
+    login: {
+        username: 'helpdesk@koloni.me' ,
+        password: 'c3kUt9d@upWBraT97n2jc' , 
+
+    },
     users: {
-        name: 'GabrielQAAuto',
-        email: 'gabriel+1@koloni.me',
-        address: 'Test Location', 
-        phoneNumber: '50686355936', 
+        name: 'Gabrieltestqa',
+        email: 'gabriel@koloni.me', 
+        address: 'Sur, San José, Curridabat, Villas de Ayarco, 10111' , 
+        phoneNumber: '50689691620', 
+        pinCode: '1234' ,
+        userId: '7777' , 
+        form: {
+            name: 'name',
+            phoneNumber: 'Enter phone number here',
+            email: 'Enter email here',
+            address: 'Enter address here' , 
+            userId: 'Enter userID here' , 
+            pinCode: 'Enter pinCode here ' , 
+
+        }
         
+    },
+    urls:
+    {
+        main: 'https://qa-org.koloni.io/'
     }
 }
