@@ -21,7 +21,7 @@ export const texts = {
             email: 'Enter email here',
             address: 'Enter address here' , 
             userId: 'Enter userID here' , 
-            pinCode: 'Enter pinCode here ' , 
+            pinCode: 'Enter pinCode ' ,
 
         }
         
@@ -30,4 +30,10 @@ export const texts = {
     {
         main: 'https://qa-org.koloni.io/'
     }
+    ,
+
+    products: {
+        filetName: 'CSVBulkUploadInventory.csv' , 
+
+    },
 }

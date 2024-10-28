@@ -10,7 +10,9 @@ export const selectors = {
         menuOptions: '.css-1dzfugc',
         peopleTab: 'ul.MuiList-root > :nth-child(6)',
         usersTab: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root',
-        eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)'
+        eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)' ,
+        productsTab: '.MuiList-padding > :nth-child(5) > :nth-child(3)'
+
     },
 
     reservationsMenu: {
@@ -21,6 +23,21 @@ export const selectors = {
 
 
     },
+
+
+
+
+    productsMenu: {
+        inventoryButton: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root', 
+        addProductButton: '.MuiGrid-root > .MuiButton-root' ,
+        bulkUploadInventoryTab: '.MuiPaper-root' ,
+        csvFileToUpload: 'CSVBulkUploadInventory.csv' , 
+        csvFileName: 'text/csv' , 
+        submitButton: '.MuiLoadingButton-root' , 
+
+
+    },
+    
     usersMenu: {
         addUserButton: '.MuiButton-root',
         nameField: '.MuiOutlinedInput-input',
