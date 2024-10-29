@@ -40,3 +40,16 @@ contact_phone: '18337081205',
 trackingNumber: ''
 }
 
+export const userData = 
+
+  {
+    "name": "My User",
+    "email": "myUser@test.com",
+    "phone_number": "+18337081205",
+    "user_id": "1000",
+    "pin_code": "1112",
+    "address": "test address",
+    "active": true,
+    "require_auth": false,
+    "groups": []
+  }

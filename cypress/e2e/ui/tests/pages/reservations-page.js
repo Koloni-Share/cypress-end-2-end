@@ -13,7 +13,8 @@ export class ReservationsPage {
         cy.get(selectors.reservations.addNewReservationForm.trackingNumberInput).type(trackingNumber, { force: true })
 
         // Location:
-        cy.get(selectors.reservations.addNewReservationForm.locationDropdown).click()            
+        //cy.get(selectors.reservations.addNewReservationForm.locationDropdown).click()            
+        cy.get(selectors.reservations.addNewReservationForm.locationDropdown).type(locationName)         
         cy.contains('li', locationName).click({ force: true })
 
         // Username:
@@ -23,8 +24,9 @@ export class ReservationsPage {
         cy.get(selectors.reservations.addNewReservationForm.phoneNumberInput).type(phoneNumber, { force: true })
 
         // Size:
-        cy.get(selectors.reservations.addNewReservationForm.sizeDropdown).click({ force: true })
-        cy.contains(`${sizeName} (5" x 5" x 5") - 1 door available`).click({ force: true })
+        const sizeValue = `${sizeName} (5" x 5" x 5") - 1 door available`    
+        cy.get(selectors.reservations.addNewReservationForm.sizeDropdown).type(sizeValue)
+        cy.contains(sizeValue).click({ force: true })
 
         // Submit button:
         cy.contains(selectors.reservations.addNewReservationForm.submitButton).click({ force: true })

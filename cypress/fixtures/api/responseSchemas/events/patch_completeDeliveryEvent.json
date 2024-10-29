@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
     "id": {
@@ -21,23 +20,19 @@
       "format": "date-time"
     },
     "ended_at": {
-      "type": "string"
+      "type": "string" 
     },
     "event_status": {
-      "type": "string",
-      "enum": ["awaiting_user_pickup", "picked_up", "finished", "cancelled"]
+      "type": "string"
     },
     "event_type": {
-      "type": "string",
-      "enum": ["delivery", "return"]
+      "type": "string"
     },
     "total_time": {
-      "type": "string",
-      "pattern": "^\\d{2}:\\d{2}:\\d{2}$"
+      "type": "string"
     },
     "refunded_amount": {
-      "type": "number",
-      "minimum": 0
+      "type": "number"
     },
     "id_user": {
       "type": "string",
@@ -62,11 +57,10 @@
           "type": "string"
         },
         "locker_number": {
-          "type": "integer"
+          "type": "number"
         },
         "mode": {
-          "type": "string",
-          "enum": ["delivery", "pickup"]
+          "type": "string"
         },
         "shared": {
           "type": "boolean"
@@ -75,15 +69,13 @@
           "type": "boolean"
         },
         "status": {
-          "type": "string",
-          "enum": ["available", "reserved", "unavailable"]
+          "type": "string"
         },
         "hardware_type": {
           "type": "string"
         },
         "mac_address": {
-          "type": "string",
-          "pattern": "^([A-Fa-f0-9]{2}:){5}[A-Fa-f0-9]{2}$"
+          "type": "string"
         },
         "price_required": {
           "type": "boolean"
@@ -113,6 +105,12 @@
             "address": {
               "type": "string"
             },
+            "hidden": {
+              "type": "boolean"
+            },
+            "shared": {
+              "type": "boolean"
+            },
             "latitude": {
               "type": "number"
             },
@@ -124,8 +122,7 @@
               "format": "email"
             },
             "contact_phone": {
-              "type": "string",
-              "pattern": "^\\+\\d{11,15}$"
+              "type": "string"
             },
             "restrict_by_user_code": {
               "type": "boolean"
@@ -146,16 +143,23 @@
               "type": "boolean"
             },
             "available_devices": {
-              "type": "integer"
+              "type": "number"
             },
             "reserved_devices": {
-              "type": "integer"
+              "type": "number"
             },
             "maintenance_devices": {
-              "type": "integer"
+              "type": "number"
             }
           },
-          "required": ["id", "created_at", "name", "address", "latitude", "longitude"]
+          "required": [
+            "id",
+            "created_at",
+            "name",
+            "address",
+            "latitude",
+            "longitude"
+          ]
         },
         "size": {
           "type": "object",
@@ -175,27 +179,39 @@
               "type": "string"
             },
             "width": {
-              "type": "integer"
+              "type": "number"
             },
             "depth": {
-              "type": "integer"
+              "type": "number"
             },
             "height": {
-              "type": "integer"
+              "type": "number"
             }
           },
-          "required": ["id", "created_at", "name", "width", "depth", "height"]
+          "required": [
+            "id",
+            "name",
+            "description",
+            "width",
+            "depth",
+            "height"
+          ]
         },
         "lock_status": {
-          "type": "string",
-          "enum": ["unknown", "locked", "unlocked"]
+          "type": "string"
         },
         "prices": {
-          "type": "array",
-          "items": {}
+          "type": "array"
         }
       },
-      "required": ["id", "created_at", "name", "locker_number", "mode", "shared", "require_image", "status", "hardware_type", "mac_address", "price_required", "id_location", "id_size", "location", "size", "lock_status", "prices"]
+      "required": [
+        "id",
+        "name",
+        "locker_number",
+        "mode",
+        "status",
+        "hardware_type"
+      ]
     },
     "user": {
       "type": "object",
@@ -212,26 +228,43 @@
           "type": "string"
         },
         "phone_number": {
-          "type": "string",
-          "pattern": "^\\d{10,15}$"
+          "type": "string"
         },
         "active": {
           "type": "boolean"
         },
         "access_code": {
-          "type": "string",
-          "pattern": "^\\d{6}$"
+          "type": "string"
         },
         "require_auth": {
           "type": "boolean"
         },
         "groups": {
-          "type": "array",
-          "items": {}
+          "type": "array"
         }
       },
-      "required": ["id", "created_at", "name", "phone_number", "active", "access_code"]
+      "required": [
+        "id",
+        "name",
+        "phone_number",
+        "active"
+      ]
     }
   },
-  "required": ["id", "invoice_id", "order_id", "created_at", "started_at", "ended_at", "event_status", "event_type", "total_time", "refunded_amount", "id_user", "id_device", "device", "user"]
+  "required": [
+    "id",
+    "invoice_id",
+    "order_id",
+    "created_at",
+    "started_at",
+    "ended_at",
+    "event_status",
+    "event_type",
+    "total_time",
+    "refunded_amount",
+    "id_user",
+    "id_device",
+    "device",
+    "user"
+  ]
 }
