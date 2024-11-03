@@ -1,3 +1,5 @@
+import { TeamMembersPage } from "../e2e/ui/tests/pages/team-members-page";
+
 export const selectors = {
     login: {
         usernameTextbox: '#\\:r1\\:',
@@ -78,6 +80,16 @@ export const selectors = {
             CustomerSupportAddNewRadioButon:'.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',
             emailInput:'input[placeholder="user@domain.com"]',
             phoneNumberInput:'input[placeholder="+12345678900"]'
+        }
+    },
+    TeamMembers:{
+        addTeamMeberButton: "",
+        addNewTeamMemberForm:{
+            emailInput:'input[placeholder="Email"]',
+            firstNameInput:'input[placeholder="First name"]',
+            lastNameInput:'input[placeholder="Last name"]',
+            pinCode:'input[placeholder="000000"]',
+            roleDropdown:"#mui-component-select-role"
         }
     }
 

@@ -13,4 +13,11 @@ export class NavigationMenu {
         cy.get(selectors.navigationMenu.locationsMenuItem).click({ force: true })
        
     }
+
+    navigateToTeamMembers(){
+        cy.contains('People').click({ force: true })
+        cy.contains('Team Members').click({ force: true })
+
+    }
+        
 }
