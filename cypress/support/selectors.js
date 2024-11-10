@@ -17,8 +17,7 @@ export const selectors = {
 
     reservationsMenu: {
         addReservationButton: '.MuiGrid-root > :nth-child(1)', 
-
-         bulkUploadtab: '.MuiTab-root' , 
+bulkUploadtab: '.MuiTab-root' , 
          okErrorbutton: '.MuiLoadingButton-root' , 
 
 
@@ -30,12 +29,15 @@ export const selectors = {
     productsMenu: {
         inventoryButton: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root', 
         addProductButton: '.MuiGrid-root > .MuiButton-root' ,
-        bulkUploadInventoryTab: '.MuiPaper-root' ,
-        csvFileToUpload: 'CSVBulkUploadInventory.csv' , 
-        csvFileName: 'text/csv' , 
+        bulkUploadInventoryTab: '#mui-p-16512-T-BulkUpload' ,
         submitButton: '.MuiLoadingButton-root' , 
-
-
+        successPopUp: '.MuiTypography-h2' , 
+        okSuccessButton: '.MuiBox-root > .MuiButton-root' , 
+        productRaw: '.MuiTableRow-root' , 
+        productCheckBox: '.PrivateSwitchBase-input', 
+        deleteProductButton: '.css-1t62lt9 > :nth-child(2)', 
+        deleteConfirmationButton: '.MuiBox-root > .MuiButton-containedPrimary' , 
+        successDeletionOkButton: '.MuiBox-root > .MuiButton-root' , 
     },
     
     usersMenu: {
@@ -84,7 +86,8 @@ export const selectors = {
             usernameInput: 'input[placeholder="Enter user name here"]',
             phoneNumberInput: 'input[placeholder="Enter phone number here"]',
             sizeDropdown: '#mui-component-select-id_size',
-            submitButton: 'Submit'
+            submitButton: 'Submit' , 
+             
         }
     },
     locations:{

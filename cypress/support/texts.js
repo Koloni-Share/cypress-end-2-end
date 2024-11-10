@@ -26,14 +26,22 @@ export const texts = {
         }
         
     },
+    csvFiles: {
+        csvProductBulk: 'CSVProductBulkUpload.csv' , 
+        csvProducts: 'CSVProductInventoryBulkUpload.csv' ,
+    },
     urls:
     {
         main: 'https://qa-org.koloni.io/'
-    }
-    ,
+    },
+    products: 
+    {
+        fileName: 'CSVProductInventoryBulkUpload.csv' ,
+    
 
-    products: {
-        filetName: 'CSVBulkUploadInventory.csv' , 
+    },
+    reservations: {
+        fileName: 'reservations_template.csv' , 
 
     },
 }
