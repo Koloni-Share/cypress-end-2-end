@@ -12,17 +12,42 @@ export const selectors = {
         menuOptions: '.css-1dzfugc',
         peopleTab: 'ul.MuiList-root > :nth-child(6)',
         usersTab: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root',
-        eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)'
+        eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)' ,
+        productsTab: '.MuiList-padding > :nth-child(5) > :nth-child(3)'
+
     },
 
     reservationsMenu: {
         addReservationButton: '.MuiGrid-root > :nth-child(1)', 
-
-         bulkUploadtab: '.MuiTab-root' , 
+bulkUploadtab: '.MuiTab-root' , 
          okErrorbutton: '.MuiLoadingButton-root' , 
 
 
     },
+
+
+
+
+    productsMenu: {
+        inventoryButton: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root', 
+        addProductButton: '.MuiGrid-root > .MuiButton-root' ,
+        bulkUploadInventoryTab: '#mui-p-16512-T-BulkUpload' ,
+        submitButton: '.MuiLoadingButton-root' , 
+        successPopUp: '.MuiTypography-h2' , 
+        okSuccessButton: '.MuiBox-root > .MuiButton-root' , 
+        productRaw: '.MuiTableRow-root' , 
+        productCheckBox: '.PrivateSwitchBase-input', 
+        deleteProductButton: '.css-1t62lt9 > :nth-child(2)', 
+        deleteConfirmationButton: '.MuiBox-root > .MuiButton-containedPrimary' , 
+        successDeletionOkButton: '.MuiBox-root > .MuiButton-root' , 
+        nameCase: '[placeholder="Product Name"]', 
+        submittedAddProductButton: 'button[type="submit"]',
+        productAddedSuccessfullyButton: '.MuiDialog-container' , 
+        trashCanButton: 'svg[data-testid="DeleteForeverIcon"]' , 
+        yesConfirmationButton: '.MuiButton-containedPrimary' , 
+        deletionSuccessfullyPopUp: '.MuiButton-containedPrimary' , 
+    },
+    
     usersMenu: {
         addUserButton: '.MuiButton-root',
         nameField: '.MuiOutlinedInput-input',
@@ -69,7 +94,8 @@ export const selectors = {
             usernameInput: 'input[placeholder="Enter user name here"]',
             phoneNumberInput: 'input[placeholder="Enter phone number here"]',
             sizeDropdown: '#mui-component-select-id_size',
-            submitButton: 'Submit'
+            submitButton: 'Submit' , 
+             
         }
     },
     locations:{

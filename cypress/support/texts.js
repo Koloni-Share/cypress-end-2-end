@@ -21,13 +21,27 @@ export const texts = {
             email: 'Enter email here',
             address: 'Enter address here' , 
             userId: 'Enter userID here' , 
-            pinCode: 'Enter pinCode here ' , 
+            pinCode: 'Enter pinCode ' ,
 
         }
         
     },
+    csvFiles: {
+        csvProductBulk: 'CSVProductBulkUpload.csv' , 
+        csvProducts: 'CSVProductInventoryBulkUpload.csv' ,
+    },
     urls:
     {
         main: 'https://qa-org.koloni.io/'
-    }
+    },
+    products: 
+    {
+        fileName: 'CSVProductInventoryBulkUpload.csv' ,
+    
+
+    },
+    reservations: {
+        fileName: 'reservations_template.csv' , 
+
+    },
 }

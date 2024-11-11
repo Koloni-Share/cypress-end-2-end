@@ -36,7 +36,17 @@ cy.get(selectors.mainPage.peopleTab).click()
 cy.get(selectors.mainPage.usersTab).click({force:true})
 })
 //
+Cypress.Commands.add('navigateToReservation', () => { 
+  cy.get(selectors.mainPage.menuOptions).click() // Crear el navigate to reservations  
+    cy.get(selectors.mainPage.eventsTab).click()
+    cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
+})
 
+Cypress.Commands.add('navigateProducts', () => { 
+  cy.get(selectors.mainPage.menuOptions).click() // Crear el navigate to reservations  
+    cy.get(selectors.mainPage.eventsTab).click()
+    cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
+})
 
 // -- This is a command to fill user in --
 Cypress.Commands.add('fillUserForm', () => { 
