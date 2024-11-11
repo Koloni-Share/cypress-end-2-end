@@ -38,6 +38,12 @@ bulkUploadtab: '.MuiTab-root' ,
         deleteProductButton: '.css-1t62lt9 > :nth-child(2)', 
         deleteConfirmationButton: '.MuiBox-root > .MuiButton-containedPrimary' , 
         successDeletionOkButton: '.MuiBox-root > .MuiButton-root' , 
+        nameCase: '[placeholder="Product Name"]', 
+        submittedAddProductButton: 'button[type="submit"]',
+        productAddedSuccessfullyButton: '.MuiDialog-container' , 
+        trashCanButton: 'svg[data-testid="DeleteForeverIcon"]' , 
+        yesConfirmationButton: '.MuiButton-containedPrimary' , 
+        deletionSuccessfullyPopUp: '.MuiButton-containedPrimary' , 
     },
     
     usersMenu: {
