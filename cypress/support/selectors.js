@@ -1,5 +1,3 @@
-import { TeamMembersPage } from "../e2e/ui/tests/pages/team-members-page";
-
 export const selectors = {
     login: {
         usernameTextbox: '#\\:r1\\:',
@@ -108,15 +106,22 @@ bulkUploadtab: '.MuiTab-root' ,
             phoneNumberInput:'input[placeholder="+12345678900"]'
         }
     },
-    TeamMembers:{
-        addTeamMeberButton: "",
-        addNewTeamMemberForm:{
-            emailInput:'input[placeholder="Email"]',
-            firstNameInput:'input[placeholder="First name"]',
-            lastNameInput:'input[placeholder="Last name"]',
-            pinCode:'input[placeholder="000000"]',
-            roleDropdown:"#mui-component-select-role"
-        }
-    }
+    addOrganization: {
+        multiTenantButton: ':nth-child(10) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root',
+        addOrganizationButton: '.MuiGrid-root > .MuiButton-root',
+        nameSpace: '.MuiOutlinedInput-input' ,  
+        selectAmode: '.css-16f1609 > .MuiAutocomplete-root > .MuiFormControl-root > .MuiOutlinedInput-root',
+    selectHardware: '.MuiOutlinedInput-input',
+        allowAccessFor: '.PrivateSwitchBase-input',
+        emailSpace: `[placeholder="Enter your organization's owner email"]` ,
+        firstNameSpace: `[placeholder="First Name"]` ,
+        lastNameSpace: `[placeholder="Last Name"]`,
+        submitButtonAddOrg: 'button[type="submit"]',
+        successfullyPopUp: '.MuiDialog-container' ,
+        organizationCreatedMessage: '.MuiDialog-container' ,
+
+        
+    },
 
 }
+

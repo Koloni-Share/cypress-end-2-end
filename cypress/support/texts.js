@@ -44,4 +44,15 @@ export const texts = {
         fileName: 'reservations_template.csv' , 
 
     },
+    addOrganization: {
+       selectionAssetMode: 'Asset' , 
+       selectionLinkaHardware: 'Linka' , 
+       email: 'test@gmailtest.com' , 
+       firstName: 'Test' , 
+       lastName: 'Name' , 
+       successfullyMessage: 'Organization created successfully' , 
+       okButton: 'Ok', 
+
+
+    },
 }
