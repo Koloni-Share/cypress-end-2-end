@@ -91,6 +91,7 @@ describe('Test Add Organization', () => {
     cy.get(
       selectors.addOrganization.multiTenantButton
     ).click();
+    cy.wait(3000)
     cy.get(selectors.addOrganization.addOrganizationButton).click(); 
     cy.fixture('testImage.png').then((fileContent) => {
       cy.get('input[type="file"]').attachFile({
@@ -126,6 +127,7 @@ describe('Test Add Organization', () => {
     cy.get(
       selectors.addOrganization.multiTenantButton
     ).click();
+    cy.wait(3000)
     cy.get(selectors.addOrganization.addOrganizationButton).click(); 
     cy.fixture('testImage.png').then((fileContent) => {
       cy.get('input[type="file"]').attachFile({
@@ -160,6 +162,7 @@ describe('Test Add Organization', () => {
     cy.get(
       selectors.addOrganization.multiTenantButton
     ).click();
+    cy.wait(3000)
     cy.get(selectors.addOrganization.addOrganizationButton).click(); 
     cy.fixture('testImage.png').then((fileContent) => {
       cy.get('input[type="file"]').attachFile({
