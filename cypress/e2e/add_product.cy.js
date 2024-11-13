@@ -39,5 +39,11 @@ cy.get(selectors.productsMenu.nameCase).type('Test')
     cy.get('.MuiDialog-container').contains('Product deleted successfully')
   });
 
+  it.only('Can add a product as part of a group', ()=>{
+    cy.get(selectors.mainPage.menuOptions).click();
+    cy.get(selectors.mainPage.productsTab).click();
+    cy.get(selectors.productsMenu.inventoryButton).click();
+  })
+
 });
 
