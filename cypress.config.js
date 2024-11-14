@@ -3,6 +3,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   defaultCommandTimeout: 10000,
+  retries:4,
 
   env: {
     username: process.env.CYPRESS_USERNAME,
