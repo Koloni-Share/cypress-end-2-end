@@ -56,6 +56,32 @@ cy.get(selectors.mainPage.usersTab).click({force:true})
 })
 //
 
+// -- This is a command to fill add organization form --
+Cypress.Commands.add('fillOrganizationForm', () => { 
+  cy.viewport('macbook-15');
+ 
+    cy.get(
+      selectors.addOrganization.multiTenantButton
+    ).click();
+    cy.get(selectors.addOrganization.addOrganizationButton).click(); 
+    cy.fixture('testImage.png').then((fileContent) => {
+      cy.get('input[type="file"]').attachFile({
+        fileContent,
+        fileName: 'profileImage.png',
+        mimeType: 'image/*',
+      });
+    }); 
+    cy.get(selectors.addOrganization.nameSpace).eq('0').type(`testQA${uuidv4().replace(/-/g, '')}`); 
+    cy.get(
+      selectors.addOrganization.selectAmode
+    ).click(); 
+    cy.contains(texts.addOrganization.selectionAssetMode).click({ force: true }); 
+
+    cy.get(selectors.addOrganization.selectHardware).eq(5).click({ force: true }); 
+    cy.contains(texts.addOrganization.selectionLinkaHardware).click({ force: true });
+})
+//
+
 
 
 // -- This is a child command --

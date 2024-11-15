@@ -39,6 +39,7 @@ describe('Test Bulk Upload Inventory', () => {
 
   });
 });
+// download QR Code, EDIT? , Bulk Edit , 
 
     it('Can Delete a BulkUploadInventory', () => {
     cy.get(selectors.mainPage.menuOptions).click();
@@ -49,9 +50,7 @@ describe('Test Bulk Upload Inventory', () => {
     cy.get(selectors.productsMenu.productCheckBox).eq('1').click() 
     cy.get(selectors.productsMenu.deleteProductButton).click()
     cy.get(selectors.productsMenu.deleteConfirmationButton).click()
-    cy.get(selectors.productsMenu.successDeletionOkButton).contains('Ok').click()
-
-
+    cy.get(selectors.productsMenu.successDeletionOkButton).click()
   });
 });
 
