@@ -42,6 +42,7 @@ export const texts = {
     },
     reservations: {
         fileName: 'reservations_template.csv' , 
+        userSelection: 'test' , 
 
     },
     addOrganization: {

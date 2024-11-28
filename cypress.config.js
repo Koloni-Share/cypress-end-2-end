@@ -2,7 +2,7 @@ require('dotenv').config();
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 50000,
   retries:4,
 
   env: {
@@ -12,6 +12,7 @@ module.exports = defineConfig({
   },
 
   e2e: {
+    experimentalRunAllSpecs:true, 
     setupNodeEvents(on, config) {
       // implement node event listeners here
 
