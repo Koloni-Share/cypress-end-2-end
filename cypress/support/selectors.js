@@ -11,7 +11,8 @@ export const selectors = {
         peopleTab: 'ul.MuiList-root > :nth-child(6)',
         usersTab: ':nth-child(1) > .MuiTypography-inherit > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root',
         eventsTab: '.MuiList-padding > :nth-child(7) > :nth-child(3)' ,
-        productsTab: '.MuiList-padding > :nth-child(5) > :nth-child(3)'
+        productsTab: '.MuiList-padding > :nth-child(5) > :nth-child(3)' ,
+        
 
     },
 
@@ -84,16 +85,38 @@ bulkUploadtab: '.MuiTab-root' ,
         }
     },
     reservations: {
+        reservationCheckBox: ':nth-child(2) > :nth-child(1) > .MuiCheckbox-root > .PrivateSwitchBase-input' , 
+        deleteButton: '.css-1t62lt9 > :nth-child(2)' , 
+        yesDeletionButton: '.MuiBox-root > .MuiButton-containedPrimary' , 
+        deletionPopUp: '.MuiTypography-h2' , 
+        okDeletionButton: '.MuiBox-root > .MuiButton-root' , 
+        
         addNewReservationForm: {
             modeDropdown: "[id='mui-component-select-mode']",
+            modeArrowButton: '#reservation_form_delivery_select_mode' , 
             deliveryOption: '[data-value="delivery"]',
+            assetOption: '.MuiList-root > [tabindex="0"]' , 
+            serviceOption: '[data-value="service"]' , 
+            vendingOption: '[data-value="vending"]' , 
+            selectUserDropdown: ':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiAutocomplete-endAdornment > .MuiButtonBase-root', 
             trackingNumberInput: 'input[placeholder="Enter tracking number here"]',
             locationDropdown: 'input[placeholder="Select a location"]',
             usernameInput: 'input[placeholder="Enter user name here"]',
             phoneNumberInput: 'input[placeholder="Enter phone number here"]',
             sizeDropdown: '#mui-component-select-id_size',
             submitButton: 'Submit' , 
-             
+            selectUserBox: ':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root' , 
+            userSelected: '.MuiAutocomplete-option' ,
+            calendarDate: '[data-testid="CalendarIcon"]' , 
+            timeSelection: '.MuiPickersDay-dayWithMargin' , 
+            locationField: '[data-testid="ArrowDropDownIcon"]' , 
+            locationSelected: '.MuiAutocomplete-option' , 
+            sizeField: '#mui-component-select-id_size' , 
+            sizeSelected: '.MuiList-root > [tabindex="0"]' , 
+            submitReservationButton: '.MuiLoadingButton-root' , 
+            successPopUp: '.MuiDialog-paper' , 
+            okSuccessButton: '.MuiBox-root > .MuiButton-root' , 
+
         }
     },
     locations:{

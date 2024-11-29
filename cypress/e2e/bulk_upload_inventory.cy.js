@@ -41,13 +41,15 @@ describe('Test Bulk Upload Inventory', () => {
 });
 
     it('Can Delete a BulkUploadInventory', () => {
+    cy.wait(10000)
     cy.get(selectors.mainPage.menuOptions).click();
     cy.get(selectors.mainPage.productsTab).click();
     cy.get(selectors.productsMenu.inventoryButton).click();
     cy.wait(3000)
     cy.get(selectors.productsMenu.productRaw).contains('1331')
+    cy.wait(2000)
     cy.get(selectors.productsMenu.productCheckBox).eq('1').click() 
-    cy.get(selectors.productsMenu.deleteProductButton).click()
+ cy.get(selectors.productsMenu.deleteProductButton).click()
     cy.get(selectors.productsMenu.deleteConfirmationButton).click()
     cy.get(selectors.productsMenu.successDeletionOkButton).contains('Ok').click()
 
