@@ -56,6 +56,19 @@ cy.get(selectors.mainPage.usersTab).click({force:true})
 })
 //
 
+// -- This is a command to delete reservation --
+Cypress.Commands.add('deleteReservation', () => { 
+       cy.get(selectors.reservations.reservationCheckBox).click()
+        cy.get(selectors.reservations.deleteButton).click()
+        cy.get(selectors.reservations.yesDeletionButton).click()
+        cy.get(selectors.reservations.deletionPopUp).contains('Success')
+        cy.get(selectors.reservations.okDeletionButton).click()
+      
+      })
+  
+
+//
+
 
 
 // -- This is a child command --

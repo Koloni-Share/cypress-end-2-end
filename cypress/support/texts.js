@@ -6,7 +6,8 @@ export const texts = {
     login: {
         username: 'helpdesk@koloni.me' ,
         password: 'c3kUt9d@upWBraT97n2jc' , 
-
+        usernameG: 'gabriel@koloni.me', 
+        passwordG:'Blockchained2024!', 
     },
     users: {
         name: 'Gabrieltestqa',
@@ -43,6 +44,7 @@ export const texts = {
     reservations: {
         fileName: 'reservations_template.csv' , 
         userSelection: 'test' , 
+        
 
     },
     addOrganization: {
