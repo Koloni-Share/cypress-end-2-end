@@ -13,7 +13,5 @@ export class UsersPage {
         cy.get(selectors.addUserForm.userId).type(id)
         cy.get(selectors.addUserForm.pinCode).type(pin)
         cy.get(selectors.addUserForm.group).type(groupName).type('{enter}')
-        //cy.contains('Submit').click()
-        
     }
 }

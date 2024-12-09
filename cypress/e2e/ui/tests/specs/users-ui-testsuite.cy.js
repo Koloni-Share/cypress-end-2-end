@@ -19,6 +19,7 @@ describe('Users Test Suite', () => {
 
         it(`should successfully create a new user and add it to a group`, () => {
             cy.loginByAPI()
+            const userID = faker.number.int({ min: 1000, max: 9999 })
 
             const groupData = {
                 "name": `Group_${faker.string.numeric(4)}`,                             
@@ -38,14 +39,22 @@ describe('Users Test Suite', () => {
                 lastName: faker.person.lastName(),
                 phone: faker.phone.number({ style: 'international' }), 
                 address: "Test Address",
-                id: faker.number.int({ min: 1000, max: 9999 }),
+                id: userID,
                 pin: faker.number.int({ min: 1000, max: 9999 })
-            });
-            
+            })            
             
             // Assertions:
             cy.contains('h2', 'Success').should('be.visible')
             cy.contains('p', 'User created correctly').should('be.visible')
 
+            cy.get('@authToken').then((token) => {
+                usersApiHelper.getUserByID(token, userID).then((getUser)=>{                    
+                    const createdUserId = getUser.body.items[0].id
+                    usersApiHelper.deleteUserById(token, createdUserId)
+                    usersApiHelper.deleteUserById(token, createdUserId).then((deleteResponse) => {
+                        expect(deleteResponse.status).to.eq(200)
+                      })
+                })
+            })
         })
 })
