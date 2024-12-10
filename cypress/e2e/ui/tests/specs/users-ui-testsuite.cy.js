@@ -37,7 +37,7 @@ describe('Users Test Suite', () => {
                 groupName: groupData.name,
                 name: faker.person.firstName(),
                 lastName: faker.person.lastName(),
-                phone: faker.phone.number({ style: 'international' }), 
+                phone: '+18337081299', 
                 address: "Test Address",
                 id: userID,
                 pin: faker.number.int({ min: 1000, max: 9999 })
