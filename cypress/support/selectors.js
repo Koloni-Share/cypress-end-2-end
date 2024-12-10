@@ -145,6 +145,15 @@ bulkUploadtab: '.MuiTab-root' ,
 
         
     },
+    addUserForm:{
+        name:"[placeholder='Name']",
+        lastName:"[placeholder='Last Name']",
+        phoneNumber:"[placeholder='Enter phone number here']",
+        address:"[placeholder='Address']",
+        userId:"[placeholder='User ID']",
+        pinCode:"[placeholder='0000']",
+        group: "input[aria-autocomplete='list']",
+    }
 
 }
 
