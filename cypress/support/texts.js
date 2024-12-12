@@ -44,7 +44,7 @@ export const texts = {
         fileName: 'reservations_template.csv' , 
         userSelection: 'test' , 
 
-    },
+    },       
     addOrganization: {
        selectionAssetMode: 'Asset' , 
        selectionLinkaHardware: 'Linka' , 

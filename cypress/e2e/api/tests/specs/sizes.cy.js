@@ -1,5 +1,5 @@
 import { SizesApiHelper } from "../helpers/sizes-api-helper";
-import { sizeData } from '../../support/data.cy.js';
+import { sizeData } from '../../../../support/data.cy.js';
 
 const sizesApiHelper = new SizesApiHelper()
 
