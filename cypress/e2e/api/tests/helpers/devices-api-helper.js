@@ -8,10 +8,13 @@ export class DevicesApiHelper {
     }
 
     deleteDeviceById(authToken, deviceId){
-      const body = {
-        deviceId
-      }
-      return cy.deleteRequest(this.endpoint, authToken).as('deleteResponse')
+      const body = 
+        [deviceId]      
+      return cy.deleteRequest(this.endpoint, body, authToken).as('deleteResponse')
+    }
+
+    getDevicebyName(authToken, name){
+      return cy.getRequest(this.endpoint + "?key=name&value=" +name, authToken).as('getDeviceResponse')
     }
   }
   

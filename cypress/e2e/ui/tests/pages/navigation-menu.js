@@ -23,7 +23,11 @@ export class NavigationMenu {
     navigateToInventory(){
         cy.contains('Products').click({ force: true })
         cy.contains('Inventory').click({ force: true })
+    }
 
+    navigateToDevices(){
+        cy.contains('Doors').click({ force: true })
+        cy.contains('Devices').click({ force: true })
     }
         
 }
