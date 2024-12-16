@@ -20,9 +20,7 @@ describe('Test Add Organization', () => {
    it('Can Add Organization - Notification', () => {
     cy.viewport('macbook-15');
  
-    cy.get(
-      selectors.addOrganization.multiTenantButton
-    ).click();
+    cy.get(selectors.addOrganization.multiTenantButton).click();
     cy.get(selectors.addOrganization.addOrganizationButton).click(); 
     cy.fixture('testImage.png').then((fileContent) => {
       cy.get('input[type="file"]').attachFile({

@@ -41,3 +41,8 @@ describe('Test Add User', () => {
     cy.get(selectors.users.usersList).contains(texts.users.email).should('not.exist')
   })
 })
+
+
+
+
+

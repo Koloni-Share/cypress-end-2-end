@@ -14,7 +14,7 @@ describe('Test Bulk Upload Inventory', () => {
   });
 
   it('Can Bulk Upload Inventory', () => {
-    cy.get(selectors.mainPage.menuOptions).click();
+    cy.get(selectors.mainPage.menuOptions).eq(1).click({force:true});
     cy.get(selectors.mainPage.productsTab).click();
     cy.get(selectors.productsMenu.inventoryButton).click();
     cy.wait(15000);
@@ -42,7 +42,7 @@ describe('Test Bulk Upload Inventory', () => {
 
     it('Can Delete a BulkUploadInventory', () => {
     cy.wait(10000)
-    cy.get(selectors.mainPage.menuOptions).click();
+    cy.get(selectors.mainPage.menuOptions).eq(1).click({force:true});
     cy.get(selectors.mainPage.productsTab).click();
     cy.get(selectors.productsMenu.inventoryButton).click();
     cy.wait(3000)

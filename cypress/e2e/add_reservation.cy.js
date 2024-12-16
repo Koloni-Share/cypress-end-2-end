@@ -17,6 +17,7 @@ describe('Test Reservation', () => {
   
   it('Add Service Reservation', () => {
 
+<<<<<<< Updated upstream
     cy.get(selectors.reservationsMenu.addReservationButton).click()
     cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
     cy.get(selectors.reservations.addNewReservationForm.serviceOption).click()
@@ -35,6 +36,13 @@ describe('Test Reservation', () => {
      cy.get(selectors.reservations.addNewReservationForm.successPopUp).contains('Success')
      cy.get(selectors.reservations.addNewReservationForm.okSuccessButton).click()
      
+=======
+     cy.get(selectors.reservationsMenu.addReservationButton).click()
+     cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
+     cy.get(selectors.reservations.addNewReservationForm.serviceOption).click()
+     cy.get(selectors.reservations.addNewReservationForm.selectUserBox,{timeout:500000}).type(texts.reservations.userSelection)
+     cy.addReservation();
+>>>>>>> Stashed changes
    }),
 
    it('Can Delete a Reservation', () => {
@@ -50,6 +58,7 @@ describe('Test Reservation', () => {
 
   it('Add Vending Reservation', () => {
 
+<<<<<<< Updated upstream
     cy.get(selectors.reservationsMenu.addReservationButton).click()
     cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
     cy.get(selectors.reservations.addNewReservationForm.vendingOption).click()
@@ -76,6 +85,33 @@ describe('Test Reservation', () => {
       cy.get(selectors.reservations.deletionPopUp).contains('Success')
       cy.get(selectors.reservations.okDeletionButton).click()
     
+=======
+     cy.get(selectors.reservationsMenu.addReservationButton).click()
+     cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
+     cy.get(selectors.reservations.addNewReservationForm.vendingOption).click()
+     cy.get(selectors.reservations.addNewReservationForm.selectUserBox,{timeout:500000}).type(texts.reservations.userSelection)
+     cy.addReservation();
+    })  , 
+
+   
+    it('Add Service Reservation with RP', () => {
+      cy.get(selectors.reservationsMenu.addReservationButton).click()
+      cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
+      cy.get(selectors.reservations.addNewReservationForm.serviceOption).click()
+      cy.get(selectors.reservations.addNewReservationForm.selectUserBox,{timeout:500000}).type(texts.reservations.userSelection)
+      cy.addRecurringPeriod();
+    })  , 
+
+
+    // This method add Vending Reservation with Recurring Periods // 
+      it('Add Vending Reservation with RP', () => {
+
+      cy.get(selectors.reservationsMenu.addReservationButton).click()
+      cy.get(selectors.reservations.addNewReservationForm.modeArrowButton).click()
+      cy.get(selectors.reservations.addNewReservationForm.vendingOption).click()
+      cy.get(selectors.reservations.addNewReservationForm.selectUserBox,{timeout:500000}).type(texts.reservations.userSelection)
+      cy.addRecurringPeriod();
+>>>>>>> Stashed changes
     }) 
    
    

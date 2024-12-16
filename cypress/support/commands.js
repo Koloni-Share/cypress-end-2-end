@@ -13,15 +13,15 @@ import { texts } from "../support/texts"
 //
 //
 // -- This is a parent command --
- Cypress.Commands.add('navigateToUser', (email, password) => { 
-    cy.get(selectors.users.PeopleTab).click()
-    cy.get(selectors.users.UsersTab).click()
-    cy.get(selectors.users.addUserButton).contains('Add User');
-  })
+Cypress.Commands.add('navigateToUser', (email, password) => {
+  cy.get(selectors.users.PeopleTab).click()
+  cy.get(selectors.users.UsersTab).click()
+  cy.get(selectors.users.addUserButton).contains('Add User');
+})
 //
 
 // -- This is a command to log in --
-Cypress.Commands.add('loginToApp', () => { 
+Cypress.Commands.add('loginToApp', () => {
   cy.visit(texts.urls.main)
   cy.get(selectors.login.usernameTextbox).type(texts.login.username)
   cy.get(selectors.login.passwordTextbox).type(texts.login.password)
@@ -29,33 +29,85 @@ Cypress.Commands.add('loginToApp', () => {
 })
 //
 
-// -- This is a command to log in --
-Cypress.Commands.add('navigateToUser', () => { 
-  cy.get(selectors.mainPage.menuOptions).click()
-cy.get(selectors.mainPage.peopleTab).click()
-cy.get(selectors.mainPage.usersTab).click({force:true})
-})
-//
-Cypress.Commands.add('navigateToReservation', () => { 
-  cy.get(selectors.mainPage.menuOptions).click() // Crear el navigate to reservations  
-    cy.get(selectors.mainPage.eventsTab).click()
-    cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
+Cypress.Commands.add('addReservation', () => {
+    cy.get(selectors.reservations.addNewReservationForm.userSelected, { timeout: 600000 }).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.calendarDate).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.timeSelection, { timeout: 500000 }).contains('20').click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.calendarDate).eq(1).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.timeSelection, { timeout: 500000 }).contains('27').click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.locationField).eq(3).click({ force: true })
+    cy.wait(500)
+    cy.get(selectors.reservations.addNewReservationForm.locationSelected, { timeout: 600000 }).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.sizeField).click()
+    cy.get(selectors.reservations.addNewReservationForm.sizeSelected).click()
+    cy.get(selectors.reservations.addNewReservationForm.submitReservationButton).click()
+    cy.get(selectors.reservations.addNewReservationForm.successPopUp).contains('Success')
+    cy.get(selectors.reservations.addNewReservationForm.okSuccessButton).click()
+    const currentLength = cy.get('.MuiTableRow-root').its('length');
+    cy.deleteReservation()
+    const afterEdit = cy.get('.MuiTableRow-root').its('length');
+    expect(currentLength).to.not.equal(afterEdit);
+
 })
 
-Cypress.Commands.add('navigateProducts', () => { 
+Cypress.Commands.add('addRecurringPeriod', () => {
+
+    cy.get(selectors.reservations.addNewReservationForm.userSelected, { timeout: 600000 }).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.calendarDate).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.timeSelection, { timeout: 500000 }).contains('20').click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.calendarDate).eq(1).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.timeSelection, { timeout: 500000 }).contains('27').click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.locationField).eq(3).click({ force: true })
+    cy.wait(500)
+    cy.get(selectors.reservations.addNewReservationForm.locationSelected, { timeout: 600000 }).eq(0).click({ force: true })
+    cy.get(selectors.reservations.addNewReservationForm.sizeField).click()
+    cy.get(selectors.reservations.addNewReservationForm.sizeSelected).click()
+    cy.get(selectors.reservations.addNewReservationForm.submitReservationButton).click()
+    cy.get(selectors.reservations.addNewReservationForm.successPopUp).contains('Success')
+    cy.get(selectors.reservations.addNewReservationForm.okSuccessButton).click()
+    cy.deleteReservation()
+    const currentLength = cy.get('.MuiTableRow-root').its('length');
+    cy.deleteReservation()
+    const afterEdit = cy.get('.MuiTableRow-root').its('length');
+    expect(currentLength).to.not.equal(afterEdit);
+
+})
+Cypress.Commands.add('navigateToReservation', () => {
   cy.get(selectors.mainPage.menuOptions).click() // Crear el navigate to reservations  
-    cy.get(selectors.mainPage.eventsTab).click()
-    cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
+  cy.get(selectors.mainPage.eventsTab).click()
+  cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
+})
+
+Cypress.Commands.add('navigateProducts', () => {
+  cy.get(selectors.mainPage.menuOptions).click() // Crear el navigate to reservations  
+  cy.get(selectors.mainPage.eventsTab).click()
+  cy.get(selectors.mainPage.reservationsTab).click()  // fin navigate to reservation 
 })
 
 // -- This is a command to fill user in --
-Cypress.Commands.add('fillUserForm', () => { 
+Cypress.Commands.add('fillUserForm', () => {
   cy.get(selectors.mainPage.menuOptions).click()
-cy.get(selectors.mainPage.peopleTab).click()
-cy.get(selectors.mainPage.usersTab).click({force:true})
+  cy.get(selectors.mainPage.peopleTab).click()
+  cy.get(selectors.mainPage.usersTab).click({ force: true })
 })
 //
 
+<<<<<<< Updated upstream
+=======
+// -- This is a command to delete reservation --
+Cypress.Commands.add('deleteReservation', () => {
+  cy.get(selectors.reservations.reservationCheckBox).click()
+  cy.get(selectors.reservations.deleteButton).click()
+  cy.get(selectors.reservations.yesDeletionButton).click()
+  cy.get(selectors.reservations.deletionPopUp).contains('Success')
+  cy.get(selectors.reservations.okDeletionButton).click()
+
+})
+
+
+//
+
+>>>>>>> Stashed changes
 
 
 // -- This is a child command --
@@ -83,7 +135,7 @@ Cypress.Commands.add('loginByAPI', () => {
       client_id: '2nt59ti9o33b3f23s60aan8brs'
     }
   }).then((response) => {
-    expect(response.status).to.eq(200); 
+    expect(response.status).to.eq(200);
     const token = response.body;
     cy.wrap(token).as('authToken');
   });
@@ -93,7 +145,7 @@ Cypress.Commands.add('loginByAPI', () => {
 /// <reference types="Cypress" />
 
 Cypress.Commands.add('postRequest', (endpoint, body, authToken, contentType, form) => {
-  const baseUrl = 'https://qa.api.koloni.io/v3/';   
+  const baseUrl = 'https://qa.api.koloni.io/v3/';
   return cy.request({
     method: 'POST',
     url: `${baseUrl}${endpoint}`,
@@ -101,7 +153,7 @@ Cypress.Commands.add('postRequest', (endpoint, body, authToken, contentType, for
       Authorization: `Bearer ${authToken}`,
       'Content-Type': contentType
     },
-    form: form, 
+    form: form,
     body: body,
     failOnStatusCode: false
   });
@@ -130,7 +182,7 @@ Cypress.Commands.add('deleteRequest', (endpoint, body, authToken, contentType, f
       Authorization: `Bearer ${authToken}`,
       'Content-Type': contentType || 'application/json'
     },
-    form: form, 
+    form: form,
     body: body,
     failOnStatusCode: false
   });
