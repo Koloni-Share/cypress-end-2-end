@@ -2,7 +2,7 @@ require('dotenv').config();
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 50000,
+  defaultCommandTimeout: 5000,
   retries:4,
 
   env: {

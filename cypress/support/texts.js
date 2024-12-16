@@ -32,14 +32,20 @@ export const texts = {
     },
     urls:
     {
-        main: 'https://qa-org.koloni.io/'
-    },
+        main: 'https://qa-org.koloni.io/' , 
+        gabgarden: 'https://gabrielgarden.koloni.io/' , 
+        lite: 'https://web-qa.koloni.io/?location=8e525b63-cd11-4cea-89f1-b34e982a577c&org=qa-org' , 
+         },
+
     products: 
+
     {
         fileName: 'CSVProductInventoryBulkUpload.csv' ,
+        productPrice: '9' , 
     
 
     },
+
     reservations: {
         fileName: 'reservations_template.csv' , 
         userSelection: 'test' , 
