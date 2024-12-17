@@ -1,3 +1,4 @@
+
 import { selectors } from "../support/selectors"
 import { texts } from "../support/texts"
 
@@ -22,6 +23,7 @@ import { texts } from "../support/texts"
 
 // -- This is a command to log in --
 Cypress.Commands.add('loginToApp', () => { 
+  cy.intercept('https://cognito-idp.us-east-1.amazonaws.com/').as('loginRequest');
   cy.visit(texts.urls.main)
   cy.get(selectors.login.usernameTextbox).type(texts.login.username)
   cy.get(selectors.login.passwordTextbox).type(texts.login.password)
