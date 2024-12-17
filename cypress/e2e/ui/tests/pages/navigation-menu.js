@@ -17,7 +17,11 @@ export class NavigationMenu {
     navigateToTeamMembers(){
         cy.contains('People').click({ force: true })
         cy.contains('Team Members').click({ force: true })
+    }
 
+    navigateToUsers(){
+        cy.contains('People').click({ force: true })
+        cy.get('div.MuiListItemText-root').contains('Users').click();
     }
 
     navigateToInventory(){
