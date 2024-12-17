@@ -1,7 +1,7 @@
 import { DevicesApiHelper } from '../helpers/devices-api-helper';
 import { LocationsApiHelper } from '../helpers/locations-api-helper';
 import { SizesApiHelper } from '../helpers/sizes-api-helper';
-import { sizeData, locationData } from '../../support/data.cy.js';
+import { sizeData, locationData } from '../../../../support/data.cy.js';
 
 const devicesApiHelper = new DevicesApiHelper()
 const locationsApiHelper = new LocationsApiHelper()
