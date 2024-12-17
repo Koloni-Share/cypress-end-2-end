@@ -11,11 +11,11 @@ export const texts = {
     },
     users: {
         name: 'Gabrieltestqa',
-        email: 'gabriel@koloni.me', 
-        address: 'Sur, San José, Curridabat, Villas de Ayarco, 10111' , 
+        email: 'gab@koloni.me', 
+        address: 'San José, Curridabat, Villas de Ayarco, 10111' , 
         phoneNumber: '50689691620', 
         pinCode: '1234' ,
-        userId: '7777' , 
+        userId: '4321' , 
         form: {
             name: 'name',
             phoneNumber: 'Enter phone number here',

@@ -25,7 +25,30 @@ Cypress.Commands.add('loginToApp', () => {
   cy.visit(texts.urls.main)
   cy.get(selectors.login.usernameTextbox).type(texts.login.username)
   cy.get(selectors.login.passwordTextbox).type(texts.login.password)
-  cy.get(selectors.login.loginButton).click()
+ let retryCount = 0
+    //Here we call the login
+  const clickButtonWithRetry = () => {
+    cy.get(selectors.login.loginButton).click();
+    //Wait for the intercept HTTP request
+    cy.wait('@loginRequest').then((interception) => {
+      if (interception.response.statusCode >= 400 && retryCount < maxRetries) {
+        cy.log(`HTTP Error detected. Retry attempt ${retryCount + 1} of ${maxRetries}.`);
+        retryCount++;
+        //It wait  5 seconds//
+        cy.wait(5000); // Wait before retrying
+        clickButtonWithRetry(); // Retry the click
+        //Si pasan mas de 4 retries, ahi si mostramos//
+      } else if (retryCount >= 4) {
+      
+        cy.log('Max retries reached. No further attempts.');
+      } else {
+        cy.log('API request successful. No need to retry.');
+      }
+    });
+  }
+
+  // Initial button click with retry logic
+  clickButtonWithRetry();
 })
 //
 

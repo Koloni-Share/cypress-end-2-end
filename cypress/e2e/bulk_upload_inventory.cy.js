@@ -2,6 +2,7 @@ import { selectors } from '../support/selectors';
 import { texts } from '../support/texts';
 import { env } from '../fixtures/environment.qa.json';
 import 'cypress-file-upload';
+import generateProductTitle from './api/helpers/randomTitleGenerator';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
@@ -46,7 +47,7 @@ describe('Test Bulk Upload Inventory', () => {
     cy.get(selectors.mainPage.productsTab).click();
     cy.get(selectors.productsMenu.inventoryButton).click();
     cy.wait(3000)
-    cy.get(selectors.productsMenu.productRaw).contains('1331')
+    cy.get(selectors.productsMenu.productRaw).contains(generateProductTitle())
     cy.wait(2000)
     cy.get(selectors.productsMenu.productCheckBox).eq('1').click() 
  cy.get(selectors.productsMenu.deleteProductButton).click()
